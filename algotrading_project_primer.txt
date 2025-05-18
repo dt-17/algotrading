@@ -1,0 +1,87 @@
+ALGORITHMIC TRADING PROJECT — PRIMER
+====================================
+
+Overview:
+---------
+This project is a modular and extensible framework for researching, developing, and evaluating algorithmic trading strategies. The primary focus is on rule-based strategies such as Bollinger Bands, momentum, mean reversion, and volatility targeting — applied across equities, ETFs, FX, and rates.
+
+The system is designed for use in both Jupyter notebooks (for rapid prototyping) and as a deployable script/dashboard (for professional use). It can be extended to portfolio-level testing, live data ingestion, and parameter optimization.
+
+Use Cases:
+----------
+- Backtesting individual trading strategies
+- Analyzing performance metrics (Sharpe, drawdown, win rate)
+- Visualizing trades and equity curves
+- Creating interactive dashboards for strategy review
+- Preparing strategies for institutional desks (e.g., Goldman Sachs)
+
+Components:
+-----------
+1. Jupyter Notebook (prototyping.ipynb)
+   - Used for prototyping strategies step-by-step
+   - Pulls data via yfinance or csv
+   - Calculates signals, simulates trades, plots performance
+
+2. Strategy Modules (strategies/)
+   - Encapsulates logic (e.g., generate_bollinger_signals)
+   - Easy to plug into different data pipelines
+
+3. Backtesting Engine (backtests/)
+   - Executes strategy signals over historical data
+   - Handles trade simulation, fees, slippage
+   - Computes portfolio value and performance metrics
+
+4. Performance Analysis (metrics.py)
+   - Calculates Sharpe Ratio, Max Drawdown, CAGR, volatility
+   - Can be extended with quantstats, empyrical, statsmodels
+
+5. Data (data/)
+   - Raw and processed price data (e.g., SPY.csv)
+
+6. Plotting (plots/)
+   - Matplotlib/Plotly-based equity curves, Bollinger overlays
+
+7. Dashboard (dashboard/app.py)
+   - Streamlit app to visualize strategy results
+   - Interactive: upload results, tweak parameters, display charts
+
+Workflow:
+---------
+1. Prototype in Jupyter using sample asset (e.g., SPY)
+2. Move signal logic to strategies/ module
+3. Use backtest engine to simulate performance
+4. Save results as .csv and plot
+5. Load .csv into Streamlit dashboard
+6. Use dashboard for demos, parameter tuning, or showcasing
+
+Environment Setup:
+------------------
+- Recommended: Conda environment for development
+- Compatible with pip/venv for portability on other systems (e.g., Goldman Sachs)
+- requirements.txt includes all necessary Python libraries
+- Separate files can be maintained for pip-only and conda-based installs
+
+Technologies Used:
+------------------
+- Python 3.10
+- pandas, numpy, scipy
+- matplotlib, seaborn, plotly
+- streamlit, dash
+- yfinance, alpha_vantage, fredapi
+- statsmodels, quantstats, empyrical
+- scikit-learn, optuna (for advanced strategy tuning)
+
+Best Practices:
+---------------
+- Keep strategy logic modular and independent of data source
+- Always validate results visually and statistically
+- Use clean directory structure for reusability
+- Document strategy assumptions and parameters clearly
+- Export all notebooks to .py files for version control
+
+Author:
+-------
+Daniel Tompkins
+
+This project is under active development and intended for both personal learning and professional applications in systematic trading.
+
