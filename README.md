@@ -30,7 +30,7 @@ This is a general-purpose algorithmic trading repository where I experiment with
 
 ```
 bollinger_backtest/
-├── BollingerBacktest.ipynb        # Notebook for prototyping
+├── prototyping.ipynb        # Notebook for prototyping
 ├── data/                          # Historical price data
 ├── strategies/                    # Strategy logic modules
 ├── backtests/                     # Backtest engine + performance metrics
